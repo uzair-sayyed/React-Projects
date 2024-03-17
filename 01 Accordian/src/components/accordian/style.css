@@ -1,0 +1,25 @@
+.accordian {
+  max-width: 600px;
+  width: 100%;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  text-align: left;
+}
+
+.question .title {
+  font-weight: 500;
+}
+
+.question span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.answer {
+  text-align: left;
+}
