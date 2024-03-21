@@ -3,63 +3,60 @@ import accordianData from "./AccordianData";
 import "./style.css";
 
 export default function Accordian() {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selected, setSelected] = useState(null);
   const [enableMultiSelection, setEnableMultiSelection] = useState(false);
-  const [multipleId, setMultipleId] = useState([]);
+  const [multiple, setMultiple] = useState([]);
 
-  //   console.log(enableMultiSelection);
-  function handleSingleSelection(getDataId) {
-    setSelectedItem(selectedItem === getDataId ? null : getDataId);
-    console.log("clicked from single selection");
+  function handleSingleSelection(getCurrentId) {
+    setSelected(getCurrentId === selected ? null : getCurrentId);
   }
 
-  function handleMultipleSelection(getDataId) {
-    setMultipleId((prevState) => {
-      return [...prevState, getDataId];
-    });
+  function handleMultiSelection(getCurrentId) {
+    let cpyMultiple = [...multiple];
+    const findIndexOfCurrentId = cpyMultiple.indexOf(getCurrentId);
+
+    if (findIndexOfCurrentId === -1) cpyMultiple.push(getCurrentId);
+    else cpyMultiple.splice(findIndexOfCurrentId, 1);
+
+    setMultiple(cpyMultiple);
   }
 
+  console.log(multiple);
   return (
-    <div className='accordian'>
-      <div>
-        <div className='wrapper'>
-          <button
-            onClick={() => setEnableMultiSelection((prevState) => !prevState)}
-          >
-            Enable Multi-Selection
-          </button>
-          {accordianData.map((data) => (
-            <div
-              className='item'
-              key={data.id}
-              onClick={() =>
-                enableMultiSelection
-                  ? handleMultipleSelection(data.id)
-                  : handleSingleSelection(data.id)
-              }
-            >
-              <div className='question'>
-                <h2 className='title'>{data.title}</h2>
+    <div className='wrapper'>
+      <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}>
+        {enableMultiSelection
+          ? "Disable Multi Selection"
+          : "Enable Multi Selection"}
+      </button>
+      <div className='accordian'>
+        {accordianData && accordianData.length > 0 ? (
+          accordianData.map((dataItem) => (
+            <div className='item' key={dataItem.id}>
+              <div
+                className='title'
+                onClick={
+                  enableMultiSelection
+                    ? () => handleMultiSelection(dataItem.id)
+                    : () => handleSingleSelection(dataItem.id)
+                }
+              >
+                <h3>{dataItem.title}</h3>
                 <span>+</span>
               </div>
-
-              {enableMultiSelection ? (
-                multipleId.indexOf(data.id) ? (
-                  <div className='answer'>{data.answer}</div>
-                ) : null
-              ) : selectedItem === data.id ? (
-                <div className='answer'>{data.answer}</div>
-              ) : // <div className='answer'>{data.answer}</div>
-              null}
+              {enableMultiSelection
+                ? multiple.indexOf(dataItem.id) !== -1 && (
+                    <div className='content'>{dataItem.answer}</div>
+                  )
+                : selected === dataItem.id && (
+                    <div className='content'>{dataItem.answer}</div>
+                  )}
             </div>
-          ))}
-        </div>
+          ))
+        ) : (
+          <div>No data found</div>
+        )}
       </div>
     </div>
   );
 }
-
-// {selectedItem === data.id ? (
-//   <div className='answer'>{data.answer}</div>
-// ) : // <div className='answer'>{data.answer}</div>
-// null}
