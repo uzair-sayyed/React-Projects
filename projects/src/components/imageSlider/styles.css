@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 200px auto 0 auto;
+}
+
+.container img {
+  /* display: none; */
+  width: 100%;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.arrow-left {
+  position: absolute;
+  font-size: 30px;
+  left: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.arrow-right {
+  position: absolute;
+  font-size: 30px;
+  right: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.hide-image {
+  display: none;
+}
+
+.circle-indicators {
+  display: flex;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(177, 167, 167);
+  cursor: pointer;
+}
+
+.active-circle-indicator {
+  color: white;
+}
