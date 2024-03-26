@@ -4,6 +4,8 @@ import ImageSlider from "./components/imageSlider";
 import LoadMoreData from "./components/loadMoreData";
 import RandomColorGenerator from "./components/randomColorGenerator";
 import StarRating from "./components/starRating";
+import TreeView from "./components/treeView";
+import menus from "./components/treeView/data";
 
 function App() {
   return (
@@ -16,7 +18,14 @@ function App() {
         limit={"5"}
         page={"1"}
       /> */}
-      <LoadMoreData />
+      {/* <LoadMoreData /> */}
+      <TreeView menus={menus} />
+      {/* <ul>
+        <li>JJJJJ</li>
+        <ul>
+          <li>ggggg</li>
+        </ul>
+      </ul> */}
     </div>
   );
 }
