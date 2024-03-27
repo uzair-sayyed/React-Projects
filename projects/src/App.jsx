@@ -2,6 +2,7 @@ import "./App.css";
 import Accordian from "./components/accordian/Accordian";
 import ImageSlider from "./components/imageSlider";
 import LoadMoreData from "./components/loadMoreData";
+import QrCode from "./components/qrCode";
 import RandomColorGenerator from "./components/randomColorGenerator";
 import StarRating from "./components/starRating";
 import TreeView from "./components/treeView";
@@ -19,13 +20,8 @@ function App() {
         page={"1"}
       /> */}
       {/* <LoadMoreData /> */}
-      <TreeView menus={menus} />
-      {/* <ul>
-        <li>JJJJJ</li>
-        <ul>
-          <li>ggggg</li>
-        </ul>
-      </ul> */}
+      {/* <TreeView menus={menus} /> */}
+      <QrCode />
     </div>
   );
 }
