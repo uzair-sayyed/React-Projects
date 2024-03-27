@@ -6,18 +6,25 @@ export default function MenuItem({ item = {} }) {
   const [displayCurrentChildren, setDisplayCurrentChildren] = useState({});
 
   function handleToggle(getCurrentLabel) {
-    setDisplayCurrentChildren({
-      ...displayCurrentChildren,
-      [getCurrentLabel]: !displayCurrentChildren[getCurrentLabel],
+    console.log(getCurrentLabel);
+    setDisplayCurrentChildren((prevState) => {
+      return {
+        ...displayCurrentChildren,
+        [getCurrentLabel]: !displayCurrentChildren[getCurrentLabel],
+      };
     });
   }
+  console.log(displayCurrentChildren);
 
   return (
     <li>
       <div style={{ display: "flex", gap: "20px" }}>
         <p>{item.label}</p>
         {item && item.children && item.children.length ? (
-          <span onClick={() => handleToggle(item.label)}>
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => handleToggle(item.label)}
+          >
             {displayCurrentChildren[item.label] ? "-" : "+"}
           </span>
         ) : null}
