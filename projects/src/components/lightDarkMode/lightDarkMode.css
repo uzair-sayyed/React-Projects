@@ -1,0 +1,28 @@
+/* :root {
+  --bg-color: #000;
+  --text-color: #fff;
+  --btn-bg-color: #fff;
+  --btn-text-color: #000;
+}
+
+.light-dark-mode {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color);
+
+  color: var(--text-color);
+  transition: all 0.5s;
+}
+
+[data-theme="light"] {
+  --bg-color: #fff;
+  --text-color: #000;
+  --btn-bg-color: #000;
+  --btn-text-color: #fff;
+}
+
+button {
+  color: var(--btn-text-color);
+  background-color: var(--btn-bg-color);
+} */

@@ -1,4 +1,4 @@
-.container {
+/* .container {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,6 @@
 }
 
 .container img {
-  /* display: none; */
   width: 100%;
   border-radius: 10px;
   user-select: none;
@@ -44,8 +43,9 @@
   transform: translateX(-50%);
   color: rgb(177, 167, 167);
   cursor: pointer;
-}
+} 
 
 .active-circle-indicator {
   color: white;
 }
+ */

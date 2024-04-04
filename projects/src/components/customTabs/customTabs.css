@@ -1,0 +1,31 @@
+/* .wrapper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.heading {
+  display: flex;
+  gap: 3rem;
+  margin-top: 100px;
+  margin-bottom: 300px;
+}
+
+.label {
+  background-color: grey;
+  padding: 12px 22px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.content {
+  font-size: 30px;
+}
+
+.content button {
+  margin-top: -200px;
+  background-color: black;
+  color: white;
+  border: 2px solid rgb(109, 109, 109);
+} */

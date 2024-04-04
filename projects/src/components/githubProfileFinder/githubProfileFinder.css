@@ -1,0 +1,45 @@
+.github-finder-container {
+  width: 600px;
+  max-width: 90%;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+.github-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.github-actions input {
+  padding: 10px;
+  height: 100%;
+  flex: 1;
+}
+.github-actions button {
+  height: 100%;
+  flex: 0.2;
+  cursor: pointer;
+}
+
+.github-content .github-profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.github-content .github-profile-card img {
+  margin-top: 30px;
+  width: 200px;
+  aspect-ratio: 1/1;
+}
+
+.github-profile-card .follows-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

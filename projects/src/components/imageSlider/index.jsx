@@ -4,7 +4,7 @@ import {
   BsArrowRightCircleFill,
   BsCircleFill,
 } from "react-icons/bs";
-import "./styles.css";
+import "./imageSlider.css";
 
 export default function ImageSlider({ url, limit, page }) {
   const [images, setImages] = useState([]);
